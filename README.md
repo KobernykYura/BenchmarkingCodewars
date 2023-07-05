@@ -1,2 +1,2 @@
-# BenchmarkingCodewars
-This a repo for learning a benchmarking.
+# Benchmarking Codewars Tasks
+This is a repo for learning benchmarking via [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet).
