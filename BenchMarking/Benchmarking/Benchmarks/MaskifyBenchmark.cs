@@ -1,6 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
-using BenchmarkDotNet.Order;
 using Benchmarking.Codewars;
 
 namespace Benchmarking.Benchmarks
@@ -14,9 +13,6 @@ namespace Benchmarking.Benchmarks
     //  Kata.Maskify("Skippy");                                   // should return "##ippy"
     //  Kata.Maskify("Nananananananananananananananana Batman!"); // should return "####################################man!"
 
-    [RankColumn]
-    [MemoryDiagnoser]
-    [Orderer(SummaryOrderPolicy.FastestToSlowest)]
     [SimpleJob(RuntimeMoniker.Net60)]
     public class MaskifyBenchmark
     {
@@ -24,17 +20,19 @@ namespace Benchmarking.Benchmarks
         public string input;
 
         [Benchmark(Baseline = true)]
-        public string Regex_NegativeLookAhead() =>
-            Maskify.Regex_NegativeLookAhead(input);
+        public string Regex_NegativeLookAhead() => Maskify.Regex_NegativeLookAhead(input);
+        
+        #region KataSolutions
 
         [Benchmark]
-        public string Regex_PositiveLookAhead() =>
-            Maskify.Regex_PositiveLookAhead(input);
+        public string Regex_PositiveLookAhead() => Maskify.Regex_PositiveLookAhead(input);
 
         [Benchmark]
         public string Substring_PadLeft() => Maskify.Substring_PadLeft(input);
 
         [Benchmark]
         public string StringBuilder() => Maskify.StringBuilder(input);
+
+        #endregion
     }
 }

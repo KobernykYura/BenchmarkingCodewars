@@ -1,6 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
-using BenchmarkDotNet.Order;
 using Benchmarking.Codewars;
 
 namespace Benchmarking.Benchmarks
@@ -11,9 +10,6 @@ namespace Benchmarking.Benchmarks
     // XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
     // XO("zzoo") => false
     
-    [RankColumn]
-    [MemoryDiagnoser]
-    [Orderer(SummaryOrderPolicy.FastestToSlowest)]
     [SimpleJob(RuntimeMoniker.Net60)]
     public class ExesAndOhsBenchmarks
     {
@@ -23,6 +19,8 @@ namespace Benchmarking.Benchmarks
         [Benchmark(Baseline = true)]
         public bool XO_GroupJoin_Distinct() => ExesAndOhs.XO_GroupJoin_Distinct(input);
 
+        #region KataSolutions
+
         [Benchmark]
         public bool XO_GroupJoin_Any() => ExesAndOhs.XO_GroupJoin_All(input);
 
@@ -31,5 +29,7 @@ namespace Benchmarking.Benchmarks
 
         [Benchmark]
         public bool XO_Loop() => ExesAndOhs.XO_Loop(input);
+
+        #endregion
     }
 }
