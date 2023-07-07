@@ -9,7 +9,7 @@ namespace Benchmarking.Codewars
     //  a = "abcdefghijklmnopqrstuvwxyz"
     //  longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
-    public class TwoToOne
+    public static class TwoToOne
     {
         private static readonly StringBuilder strBuilder = new StringBuilder();
 
