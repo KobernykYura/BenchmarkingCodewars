@@ -2,7 +2,7 @@
 using BenchmarkDotNet.Jobs;
 using Benchmarking.Codewars;
 
-namespace Benchmarking.Benchmarks
+namespace Benchmarking.UnitTestRunner.Benchmarks
 {
     //  Kata.Maskify("4556364607935616"); // should return "############5616"
     //  Kata.Maskify("64607935616");      // should return "#######5616"

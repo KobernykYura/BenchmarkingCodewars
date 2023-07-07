@@ -2,7 +2,7 @@
 using BenchmarkDotNet.Jobs;
 using Benchmarking.Codewars;
 
-namespace Benchmarking.Benchmarks
+namespace Benchmarking.UnitTestRunner.Benchmarks
 {
     // XO("ooxx") => true
     // XO("xooxx") => false
