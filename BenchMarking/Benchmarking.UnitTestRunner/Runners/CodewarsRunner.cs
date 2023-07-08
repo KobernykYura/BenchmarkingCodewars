@@ -30,5 +30,11 @@ namespace Benchmarking.UnitTestRunner.Runners
         {
             BenchmarkRunner.Run<MaskifyBenchmark>(this.config);
         }
+
+        [Fact]
+        public void AlphabetPositionBenchmark()
+        {
+            BenchmarkRunner.Run<AlphabetPositionBenchmark>(this.config);
+        }
     }
 }
