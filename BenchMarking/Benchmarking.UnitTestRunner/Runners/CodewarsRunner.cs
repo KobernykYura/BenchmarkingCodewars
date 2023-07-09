@@ -3,9 +3,9 @@ using Benchmarking.UnitTestRunner.Benchmarks;
 
 namespace Benchmarking.UnitTestRunner.Runners
 {
-    public class Tests : BenchmarkBaseTest
+    public class BenchmarkTests : BenchmarkBaseTest
     {
-        public Tests(BenchmarkSetupFixture benchmarkSetup) : base(benchmarkSetup) { }
+        public BenchmarkTests(BenchmarkSetupFixture benchmarkSetup) : base(benchmarkSetup) { }
 
         [Fact]
         public void CreatePhoneNumberBenchmark()
@@ -35,6 +35,12 @@ namespace Benchmarking.UnitTestRunner.Runners
         public void AlphabetPositionBenchmark()
         {
             BenchmarkRunner.Run<AlphabetPositionBenchmark>(this.config);
+        }
+
+        [Fact]
+        public void PersistentBuggerBenchmark()
+        {
+            BenchmarkRunner.Run<PersistentBuggerBenchmark>(this.config);
         }
     }
 }
