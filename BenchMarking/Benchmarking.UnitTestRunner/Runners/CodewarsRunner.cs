@@ -42,5 +42,11 @@ namespace Benchmarking.UnitTestRunner.Runners
         {
             BenchmarkRunner.Run<PersistentBuggerBenchmark>(this.config);
         }
+
+        [Fact]
+        public void CountStringCharacterBenchmark()
+        {
+            BenchmarkRunner.Run<CountStringCharacterBenchmark>(this.config);
+        }
     }
 }

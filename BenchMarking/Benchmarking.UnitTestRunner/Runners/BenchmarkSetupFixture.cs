@@ -1,8 +1,10 @@
-﻿using BenchmarkDotNet.Columns;
+﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Exporters.Json;
 using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Order;
 using Perfolizer.Horology;
 
 namespace Benchmarking.UnitTestRunner.Runners
@@ -33,6 +35,10 @@ namespace Benchmarking.UnitTestRunner.Runners
 
             return DefaultConfig.Instance
                 .WithArtifactsPath("./ArtifactsBenchmark")
+                .WithOrderer(new DefaultOrderer(
+                    SummaryOrderPolicy.FastestToSlowest,
+                    MethodOrderPolicy.Declared
+                ))
                 .AddJob(Job.Default
                     .WithWarmupCount(1) // 1 warmup is enough for our purpose
                     .WithIterationTime(TimeInterval.FromMilliseconds(250)) // the default is 0.5s per iteration, which is slighlty too much for us
