@@ -48,5 +48,11 @@ namespace Benchmarking.UnitTestRunner.Runners
         {
             BenchmarkRunner.Run<CountStringCharacterBenchmark>(this.config);
         }
+
+        [Fact]
+        public void FindOddIntBenchmark()
+        {
+            BenchmarkRunner.Run<FindOddIntBenchmark>(this.config);
+        }
     }
 }
