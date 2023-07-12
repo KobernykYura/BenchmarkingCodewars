@@ -54,5 +54,11 @@ namespace Benchmarking.UnitTestRunner.Runners
         {
             BenchmarkRunner.Run<FindOddIntBenchmark>(this.config);
         }
+
+        [Fact]
+        public void LongestConsecutivesBenchmark()
+        {
+            BenchmarkRunner.Run<LongestConsecutivesBenchmark>(this.config);
+        }
     }
 }
