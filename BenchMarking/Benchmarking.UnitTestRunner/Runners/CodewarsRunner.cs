@@ -5,7 +5,9 @@ namespace Benchmarking.UnitTestRunner.Runners
 {
     public class BenchmarkTests : BenchmarkBaseTest
     {
-        public BenchmarkTests(BenchmarkSetupFixture benchmarkSetup) : base(benchmarkSetup) { }
+        public BenchmarkTests(BenchmarkSetupFixture benchmarkSetup) : base(benchmarkSetup)
+        {
+        }
 
         [Fact]
         public void CreatePhoneNumberBenchmark()
@@ -59,6 +61,12 @@ namespace Benchmarking.UnitTestRunner.Runners
         public void LongestConsecutivesBenchmark()
         {
             BenchmarkRunner.Run<LongestConsecutivesBenchmark>(this.config);
+        }
+
+        [Fact]
+        public void PigIt()
+        {
+            BenchmarkRunner.Run<SimplePigLatinBenchmark>(this.config);
         }
     }
 }
